@@ -25,7 +25,7 @@ if(isset($_POST['login'])){
         if($row['username'] == $username && $row['password'] == $password){
           header('location:index.php?success');
         }else{
-          header('location:login.php?error');
+          header('location:index.php?error');
         }
 
 }
