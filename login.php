@@ -12,7 +12,7 @@ mysqli_select_db($con, 'registration');
 $name = $_POST['user'];
 $pass = $_POST['password'];
 
-$s = " SELECT * FORM `user` WHERE name = '$name' && password = '$pass'";
+$s = " SELECT * FROM `user` WHERE name = '$name' && password = '$pass'";
 
 $result = mysqli_query($con, $s);
 
