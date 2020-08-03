@@ -9,24 +9,26 @@ $con = mysqli_connect('localhost', 'root', '');
 
 mysqli_select_db($con, 'registration');
 
-$name = $_POST['user'];
-$pass = $_POST['password'];
+if(isset($_POST['login'])){
 
-$s = " SELECT * FROM `user` WHERE name = '$name' && password = '$pass'";
+        $username = $_POST['user'];
+        $password = $_POST['password'];
+        
+        $sql = "SELECT * FROM user WHERE ";
+        $sql .= "username = '{$username}' ";
+        $sql .= "AND password = '{$password}' ";
+        $sql .= "LIMIT 1";
 
-$result = mysqli_query($con, $s);
+        $result = mysqli_query($con, $sql);
 
-$num = mysqli_num_rows($result);
+        $row = mysqli_fetch_array($result);
+        if($row['username'] == $username && $row['password'] == $password){
+          header('location:index.php?success');
+        }else{
+          header('location:login.php?error');
+        }
 
-
-if($num == 1) {
-  header('location:index.php');
 }
-
-
-
-
-
 ?>
 
 <section class="default-padding">
@@ -50,7 +52,7 @@ if($num == 1) {
     <hr>
     </div>
     
-    <button type="submit" class="btn btn-success">Login</button>
+    <button type="submit" name="login" class="btn btn-success">Login</button>
   </div>
 
   <div class="container signin">

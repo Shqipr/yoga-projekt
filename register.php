@@ -9,24 +9,42 @@ session_start();
 
 $con = mysqli_connect('localhost','root', '');
 
-mysqli_select_db($con, 'registration');
+mysqli_select_db($con, 'registration2');
 
-$name = $_POST['user'];
-$pass = $_POST['password'];
 
-$s ="select * form  `user` where name ='$name'";
+if (isset($_POST['regjister'])){
+  $name = $_POST['user'];
+  $pass = $_POST['password'];
 
-$result = mysqli_query($con, $s);
-
-$num = mysqli_num_rows($result);
-
-if($num == 1) {
-  echo "Username Alredy Taken";
-
-}else{
+  // $s ="select * form  `user` where name ='$name'";
   $reg = "insert into `user`(user , password) values ('$name','$pass')";
-  mysqli_query($con, $reg);
- 
+
+  $result = mysqli_query($con, $reg);
+
+  if($result){
+    header('Location: register.php?success');
+  }else{
+    header('Location: register.php?error');
+
+  }
+
+
+
+
+
+
+
+  // $num = mysqli_num_rows($result);
+
+  // if($num == 1) {
+  //   echo "Username Alredy Taken";
+
+  // }else{
+  //   $reg = "insert into `user`(user , password) values ('$name','$pass')";
+  //   mysqli_query($con, $reg);
+  
+  // }
+
 }
 
 
@@ -49,7 +67,7 @@ if($num == 1) {
     <input type="password" placeholder="Password" name="password" required>
     </div>
     <div>
-    <button type="submit" class="register btn btn-success">Register</button>
+    <button type="submit" name="regjister" class="register btn btn-success">Register</button>
   </div>
 
   <div class="container signin">
