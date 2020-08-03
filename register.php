@@ -9,7 +9,7 @@ session_start();
 
 $con = mysqli_connect('localhost','root', '');
 
-mysqli_select_db($con, 'registration2');
+mysqli_select_db($con, 'register');
 
 
 if (isset($_POST['regjister'])){
