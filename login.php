@@ -23,9 +23,9 @@ if(isset($_POST['login'])){
 
         $row = mysqli_fetch_array($result);
         if($row['username'] == $username && $row['password'] == $password){
-          header('location:index.php?success');
+          header('location:home.php?success');
         }else{
-          header('location:index.php?error');
+          header('location:home.php?error');
         }
 
 }

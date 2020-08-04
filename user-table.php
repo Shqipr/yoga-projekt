@@ -35,6 +35,10 @@ function pre_r( $array ) {
             <td><?php echo $row['user']; ?></td>
             <td><?php echo $row['password']; ?></td>
             <td>
+                <a href="user-table.php?edit= <?php echo $row['user']; ?>"
+                    class="btn btn-info">Edit</a>
+            <!-- </td> 
+            <td> -->
                 <a href="user-table.php?delete=1 <?php echo $row['id']; ?>"
                     class="btn btn-danger">Delete</a>
             </td>

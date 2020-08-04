@@ -14,6 +14,7 @@ if (isset($_POST['send'])){
       or die($mysqli->error);
 }
 
+
 if (isset($_GET['delete'])){
     $id = $_GET['delete'];
     $mysqli->query(" DELETE * FROM `contacti` WHERE id = $id") or die($mysqli->error());
