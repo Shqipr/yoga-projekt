@@ -15,7 +15,9 @@ if (isset($_POST['send'])){
 
 if (isset($_GET['delete'])){
     $id = $_GET['delete'];
-    $mysqli->query(" DELETE * FROM `user` WHERE id = $id") or die($mysqli->error());
+    $mysqli->query("DELETE FROM `user` WHERE id = $id") or die($mysqli->error());
+
+    header ('location:user-table.php');
 }
 
 

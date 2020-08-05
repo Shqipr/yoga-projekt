@@ -14,21 +14,35 @@ if(isset($_POST['login'])){
         $username = $_POST['user'];
         $password = $_POST['password'];
         
-        $sql = "SELECT * FROM user WHERE ";
-        $sql .= "username = '{$username}' ";
-        $sql .= "AND password = '{$password}' ";
-        $sql .= "LIMIT 1";
+        $s = "SELECT * FROM user WHERE username = '$username' && password ='$password'";
+       
+       
+        $result = mysqli_query($con, $s);
 
-        $result = mysqli_query($con, $sql);
+        $num = mysqli_num_rows($result);
 
-        $row = mysqli_fetch_array($result);
-        if($row['username'] == $username && $row['password'] == $password){
-          header('location:login.php?success');
+        if($num == 1) {
+
+          $_SESSION['username'] = $username;
+          header('location:home.php');
         }else{
-          header('location:home.php?error');
+          header('location:login.php');
         }
+//         $sql = "SELECT * FROM user WHERE ";
+//         $sql .= "username = '{$username}' ";
+//         $sql .= "AND password = '{$password}' ";
+//         $sql .= "LIMIT 1";
 
-}
+//         $result = mysqli_query($con, $sql);
+
+//         $row = mysqli_fetch_array($result);
+//         if($row['username'] == $username && $row['password'] == $password){
+//           header('location:login.php?success');
+//         }else{
+//           header('location:home.php?error');
+//         }
+
+// }
 ?>
 
 <section class="default-padding">

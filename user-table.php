@@ -39,7 +39,7 @@ function pre_r( $array ) {
                     class="btn btn-info">Edit</a>
             <!-- </td> 
             <td> -->
-                <a href="user-table.php?delete=1 <?php echo $row['id']; ?>"
+                <a href="users.php?delete=<?php echo $row['id']; ?>"
                     class="btn btn-danger">Delete</a>
             </td>
         </tr>
