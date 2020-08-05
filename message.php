@@ -40,10 +40,11 @@ function pre_r( $array ) {
             <td><?php echo $row['subject']; ?></td>
             <td><?php echo $row['message']; ?></td>
             <td>
-                <a href="message.php?delete=1 <?php echo $row['id']; ?>"
+                <a href="proccess.php?delete=<?php echo $row['id']; ?>"
                     class="btn btn-danger">Delete</a>
             </td>
         </tr>
+        
         <?php endwhile ?>
 </table>
 

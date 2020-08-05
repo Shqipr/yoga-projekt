@@ -40,10 +40,13 @@
                   </div>
                   <button style="border-radius: 25px;border:1px solid #20B2AA; float: right; background-color: #20B2AA;" name="send" class="btn text-light ">Send</button>
                   </form>
+
+                  
             </div>
         </div>
     </div>
 </section>
+
 
 
 
