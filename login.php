@@ -23,7 +23,7 @@ if(isset($_POST['login'])){
 
         $row = mysqli_fetch_array($result);
         if($row['username'] == $username && $row['password'] == $password){
-          header('location:home.php?success');
+          header('location:login.php?success');
         }else{
           header('location:home.php?error');
         }
