@@ -23,7 +23,7 @@
                         <a href="#" class="nav-link text-dark">PHOTO</a>
                     </li>
                     <li class="nav-item">
-                        <a href="logout.php" class="nav-link text-dark">Logout</a>
+                        <a href="logout.php" class="nav-link text-dark"> Logout</a>
                     </li>
                     
                 </ul>

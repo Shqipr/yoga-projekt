@@ -73,6 +73,8 @@ function pre_r( $array ) {
             <th colspan="1">Action</th>
         </tr>
     </thead>
+
+    
     <?php 
         while ($row = $result->fetch_assoc()): ?>
         <tr>

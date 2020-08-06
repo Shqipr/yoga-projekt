@@ -26,7 +26,7 @@ if(isset($_POST['login'])){
           $_SESSION['username'] = $username;
           header('location:home.php');
         }else{
-          header('location:login.php');
+          header('location:home.php');
         }
       }
 
@@ -39,13 +39,13 @@ if(isset($_POST['login'])){
     <hr>
     </div>
     <label for="user"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="user"  >
+    <input type="text" placeholder="Username" name="user" required >
     <div>
     </div>
    
     <div>
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" >
+    <input type="password" placeholder="Enter Password" name="password" id="password" required >
     </div>
     <div>
   
