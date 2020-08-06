@@ -21,7 +21,7 @@ function pre_r( $array ) {
 
 <section>
 <div class="container">
-<div class="row">
+
 <button type="button" class="btn btn-info " data-toggle="modal" data-target="#mymodal">  Add User </button>
 <div id="mymodal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -57,7 +57,6 @@ function pre_r( $array ) {
       </div>
     </div>
 
-  </div>
 </div>
             
 </div>
