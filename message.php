@@ -22,9 +22,9 @@ function pre_r( $array ) {
 <section class=" ">
 <div class="container">
 <div class="row  ">
-<table  class="table table-bordered  ">
+<table  class="table table-striped ">
     <thead>
-        <tr style="background-color:#FFFAF0; ">
+        <tr >
             <th >Email</th>
             <th>Derguar nga:</th>
             <th>Subject</th>
