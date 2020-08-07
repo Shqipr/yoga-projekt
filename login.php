@@ -1,11 +1,13 @@
 <?php include'includes/header.php'; ?>
 
 <?php 
+$con = mysqli_connect('localhost', 'root', '');
 
-$host="localhost";
-$user="root";
-$password="";
-$db="register";
+mysqli_select_db($con, 'register');
+// $host="localhost";
+// $user="root";
+// $password="";
+// $db="register";
 
 mysql_connect($host,$user,$password);
 mysql_select_db($db);
@@ -19,7 +21,7 @@ if(isset(['username'])){
   $sql="SELECT * FROM `user` WHERE user='".$username."' AND password='".$password."' limit 1;"
 
 
-  $result= mysaql_query($sql);
+  $result= mysaql_query($con,$sql);
 
   if(mysql_num_rows($result)==1){
     echo "You have successfully Logged in";
