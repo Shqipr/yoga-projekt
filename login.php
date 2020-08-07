@@ -2,35 +2,40 @@
 
 <?php 
 
+$host="localhost";
+$user="root";
+$password="";
+$db="register";
 
-session_start();
+mysql_connect($host,$user,$password);
+mysql_select_db($db);
 
-$con = mysqli_connect('localhost', 'root', '');
 
-mysqli_select_db($con, 'register');
+if(isset(['username'])){
 
-if(isset($_POST['login'])){
+  $username =$_POST['user'];
+  $password =$_POST['password'];
 
-        $username = $_POST['user'];
-        $password = $_POST['password'];
-        
-        $s = "SELECT * FROM `user` WHERE username = '$username' && password ='$password'";
-       
-       
-        $result = mysqli_query($con, $s);
+  $sql="SELECT * FROM `user` WHERE user='".$username."' AND password='".$password."' limit 1;"
 
-        $num = mysqli_num_rows($result);
 
-        if($num == 1) {
+  $result= mysaql_query($sql);
 
-          $_SESSION['username'] = $username;
-          header('location:home.php');
-        }else{
-          header('location:home.php');
-        }
-      }
+  if(mysql_num_rows($result)==1){
+    echo "You have successfully Logged in";
+    exit();
+  }
+  else{
+    echo "You have entered incorrect password";
+    exit();
+  }
+}
 
 ?>
+
+
+
+
 <section class="default-padding">
 <form method="post" action="login.php">
 <div class="container text-center">
