@@ -16,13 +16,15 @@ if (isset($_POST['send'])){
 
      $mysqli->query("INSERT INTO `user` (user, password) VALUES ('$name', '$pass')")
       or die($mysqli->error);
-
-if (isset($_GET['delete'])){
-    $id = $_GET['delete'];
-    $mysqli->query("DELETE FROM `user` WHERE id=$id") or die($mysqli->error());
-
-    header ('location:user-table.php');
 }
+
+      if (isset($_GET['delete'])){
+        $id = $_GET['delete'];
+        $mysqli->query("DELETE FROM `user` WHERE id=$id") or die($mysqli->error());
+    
+        header ('location:user-table.php');
+    
+    }
 
 
 if (isset($_GET['edit'])){

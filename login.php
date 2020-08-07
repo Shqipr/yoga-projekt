@@ -1,9 +1,9 @@
 <?php include'includes/header.php'; ?>
 
 <?php 
-$con = mysqli_connect('localhost', 'root', '');
+$con = mysql_connect('localhost', 'root', '');
 
-mysqli_select_db($con, 'register');
+mysql_select_db($con, 'register');
 // $host="localhost";
 // $user="root";
 // $password="";
@@ -18,10 +18,11 @@ if(isset(['username'])){
   $username =$_POST['user'];
   $password =$_POST['password'];
 
-  $sql="SELECT * FROM `user` WHERE user='".$username."' AND password='".$password."' limit 1;"
+  $s="SELECT FROM `user` WHERE user='".$username."' AND password='".$password."' limit 1;"
 
 
-  $result= mysaql_query($con,$sql);
+ 
+  $result= mysaql_query($con, $s);
 
   if(mysql_num_rows($result)==1){
     echo "You have successfully Logged in";
