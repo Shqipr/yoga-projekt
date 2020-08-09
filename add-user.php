@@ -15,7 +15,7 @@ if (isset($_POST['regjister'])){
   $name = $_POST['user'];
   $pass = $_POST['password'];
 
-  // $s ="select * form  `user` where name ='$name'";
+  // $s ="select *w form  `user` where name ='$name'";
   $reg = "insert into `user`(user , password) values ('$name','$pass')";
 
   $result = mysqli_query($con, $reg);
