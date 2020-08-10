@@ -1,40 +1,33 @@
 <?php include'includes/header.php'; ?>
 
 <?php 
-$con = mysql_connect('localhost', 'root', '');
-
-mysql_select_db($con, 'register');
-// $host="localhost";
-// $user="root";
-// $password="";
-// $db="register";
-
-mysql_connect($host,$user,$password);
-mysql_select_db($db);
-
-
-if(isset(['username'])){
-
-  $username =$_POST['user'];
-  $password =$_POST['password'];
-
-  $s="SELECT FROM `user` WHERE user='".$username."' AND password='".$password."' limit 1;"
-
-
+  session_start();
  
-  $result= mysaql_query($con, $s);
-
-  if(mysql_num_rows($result)==1){
-    echo "You have successfully Logged in";
-    exit();
+  $con = mysqli_connect('localhost', 'root', '');
+  mysqli_select_db($con, 'register');
+ 
+  if(isset($_POST['login'])){
+   
+    $username = $_POST['user'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM `user` WHERE ";
+    $sql .= "username = '$username' ";
+    $sql .= "AND password = '$password' ";
+    $sql .= "LIMIT 1";
+   
+    $result = mysqli_query($con, $sql);
+    
+    $row = mysqli_fetch_array($result);
+  
+  
+    if($row['username'] == $username & $row['password'] == $password){
+    header('location:home.php?success');
+    }else{
+    header('location:login.php?error');
+    }
   }
-  else{
-    echo "You have entered incorrect password";
-    exit();
-  }
-}
-
 ?>
+
 
 
 
