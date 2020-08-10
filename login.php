@@ -10,9 +10,10 @@
    
     $username = $_POST['user'];
     $password = $_POST['password'];
+   
     $sql = "SELECT * FROM `user` WHERE ";
-    $sql .= "username = '$username' ";
-    $sql .= "AND password = '$password' ";
+    $sql .= "user = '$username'";
+    $sql .= "AND password = '$password'";
     $sql .= "LIMIT 1";
    
     $result = mysqli_query($con, $sql);
@@ -20,17 +21,13 @@
     $row = mysqli_fetch_array($result);
   
   
-    if($row['username'] == $username & $row['password'] == $password){
-    header('location:home.php?success');
+    if($row['user'] == $username & $row['password'] == $password){
+         header('location:home.php?success');
     }else{
-    header('location:login.php?error');
+        header('location:login.php?error');
     }
   }
 ?>
-
-
-
-
 
 <section class="default-padding">
 <form method="post" action="login.php">

@@ -3,7 +3,7 @@
 $mysqli = new mysqli('localhost', 'root', '', 'register') or die(mysqli_error($mysqli));
 
 $id = 0;
-$update = false;
+
 $name = '';
 $pass = '';
 
@@ -28,8 +28,7 @@ if (isset($_POST['send'])){
 
 
 if (isset($_GET['edit'])){
-    $id = $_GET['id'];
-    $update = true;
+    $id = $_GET['edit'];
     $_result = $mysqli->query("SELECT FROM `user` WHERE id=$id") or die($mysqli->error());
     if (count($_result)==1){
         $row = $result->fetch_array();

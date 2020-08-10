@@ -103,7 +103,8 @@ function pre_r( $array ) {
     </div>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-info" ><a class="text-light" href="users.php?update=<?php echo $row['id']; ?>">Update</a></button>
+      <button type="button" class="btn btn-info" >
+      <a class="text-light" href="users.php?edit=<?php echo $row['id']; ?>"></a>Update</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
