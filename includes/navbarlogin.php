@@ -8,10 +8,10 @@
             <div class="collapse navbar-collapse text-center" id="collapsenavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-dark active">HOME</a>
+                        <a href="message.php" class="nav-link text-dark active">Message</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-dark">ABOUT US</a>
+                        <a href="user-table.php" class="nav-link text-dark">Users</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link text-dark  ">SERVICES</a>
@@ -22,9 +22,9 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link text-dark">PHOTO</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="logout.php" class="nav-link text-dark"> Logout</a>
-                    </li>
+                    </li> -->
                     
                 </ul>
 
